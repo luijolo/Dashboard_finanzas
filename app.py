@@ -146,7 +146,7 @@ with g3:
           x=df_gvp_cat["Gasto_Mes_Corriente"],
           name="Gasto Real",
           orientation="h",
-          marker_color="#E67E22",
+          marker_color="#FF4B4B",
       )
   )
   # Presupuesto con un guion / línea vertical de marcador
@@ -182,18 +182,39 @@ with g4:
       value_name="Monto",
   )
 
-  # 4. Colores personalizados y orden específico para el gráfico de abajo a la derecha
-  # Puedes modificar esta lista con los colores hexadecimales que prefieras en el orden exacto de tus grupos
-  colores_personalizados = ["#2E86C1", "#28B463", "#F39C12", "#8E44AD", "#E74C3C"]
-  
+  # Diccionario directo: asigna cada categoría de tu Excel a su color exacto
+  colores_por_categoria = {
+      "Efectivo y equivalentes": "#FFC000",
+      "Banco": "#A6CAEC",
+      "Inversiones": "#1C7629",
+      "Cuentas por cobrar": "#55D768",
+      "Propiedades": "#A6A6A6",
+      "Otros activos": "#7F7F7F",
+      "Tarjeta de crédito": "#092442",
+      "Préstamos": "#F6AC26",
+      "Cuentas por pagar": "#F83520"
+  }
+
   fig4 = px.bar(
       df_pat_melt,
       x="Fecha",
       y="Monto",
       color="Nivel_2",
       barmode="relative",
-      color_discrete_sequence=colores_personalizados, # Aplicamos la paleta personalizada
-      category_orders={"Nivel_2": ["Efectivo", "Inversiones", "Bienes Raíces", "Pasivos Corto Plazo", "Pasivos Largo Plazo"]} # Define aquí el orden estricto de las barras si lo deseas
+      color_discrete_map=colores_por_categoria,  # Usamos el mapa directo por nombre
+      category_orders={
+          "Nivel_2": [
+              "Efectivo y equivalentes",
+              "Banco",
+              "Inversiones",
+              "Cuentas por cobrar",
+              "Propiedades",
+              "Otros activos",
+              "Tarjeta de crédito",
+              "Préstamos",
+              "Cuentas por pagar",
+          ]
+      },
   )
   fig4.update_layout(
       height=380,
