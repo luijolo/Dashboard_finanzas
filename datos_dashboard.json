@@ -189,16 +189,16 @@
     },
     {
       "fecha": "2026-11-30",
-      "ingresos": 4939.11,
-      "gastos": 8371.17,
-      "resultado": -3432.06,
-      "tasa_ahorro": -69.49,
+      "ingresos": 108719.4,
+      "gastos": 65799.95,
+      "resultado": 42919.45,
+      "tasa_ahorro": 39.48,
       "activos": 554378.62,
       "pasivos": 186860.94,
       "patrimonio_neto": 367517.68,
       "fondo_emergencia": 182503.29,
-      "gasto_prom_12m": 71402.7,
-      "fe_meses": 2.6
+      "gasto_prom_12m": 76188.43166666667,
+      "fe_meses": 2.4
     }
   ],
   "activos_detalle": [
