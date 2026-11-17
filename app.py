@@ -33,7 +33,7 @@ df_mensual = pd.DataFrame(data["mensual"])
 # ==========================================
 col_titulo, col_filtro = st.columns([3, 1])
 with col_titulo:
-  st.title("📊 Panel de Finanzas Personales")
+  st.title("Panel de Finanzas Personales")
 with col_filtro:
   mes_sel = st.selectbox(
       "Mes de cierre", options=list(reversed(fechas)), index=0
@@ -125,39 +125,47 @@ with g2:
 g3, g4 = st.columns(2)
 
 with g3:
-  st.subheader("Gasto Real vs. Presupuesto por Categoría")
+  # 1. Título dinámico usando el mes obtenido de la celda B1 de tu Excel
+  mes_etiqueta = data.get("mes_presupuesto", "mes")
+  st.subheader(f"Presupuesto mensual ({mes_etiqueta})")
+  
   df_gvp = pd.DataFrame(data["gastos_vs_pres"])
-  df_gvp_cat = (
-      df_gvp.groupby("Nivel_2")[[mes_sel, "Presupuesto"]].sum().reset_index()
-  )
+  
+  # Agrupamos por Nivel_3 (que contiene el detalle de tus gastos presupuestados)
+  df_gvp_cat = df_gvp.groupby("Nivel_3")[["Gasto_Mes_Corriente", "Presupuesto"]].sum().reset_index()
   df_gvp_cat = df_gvp_cat[
-      (df_gvp_cat[mes_sel] > 0) | (df_gvp_cat["Presupuesto"] > 0)
+      (df_gvp_cat["Gasto_Mes_Corriente"] > 0) | (df_gvp_cat["Presupuesto"] > 0)
   ]
-  df_gvp_cat = df_gvp_cat.sort_values(by=mes_sel, ascending=True)
+  df_gvp_cat = df_gvp_cat.sort_values(by="Gasto_Mes_Corriente", ascending=True)
 
   fig3 = go.Figure()
+  # Gasto real en barras
   fig3.add_trace(
       go.Bar(
-          y=df_gvp_cat["Nivel_2"],
-          x=df_gvp_cat[mes_sel],
+          y=df_gvp_cat["Nivel_3"],
+          x=df_gvp_cat["Gasto_Mes_Corriente"],
           name="Gasto Real",
           orientation="h",
           marker_color="#E67E22",
       )
   )
+  # Presupuesto con un guion / línea vertical de marcador
   fig3.add_trace(
       go.Scatter(
-          y=df_gvp_cat["Nivel_2"],
+          y=df_gvp_cat["Nivel_3"],
           x=df_gvp_cat["Presupuesto"],
           name="Presupuesto",
           mode="markers",
-          marker=dict(symbol="line-ns-open", size=18, line=dict(width=3), color="#1B2631"),
+          marker=dict(symbol="line-ns-open", size=16, line=dict(width=4), color="#1B2631"),
       )
   )
+  # Eliminar las gridlines (líneas de cuadrícula) del gráfico
   fig3.update_layout(
       height=380,
       margin=dict(l=10, r=10, t=30, b=10),
       legend=dict(orientation="h", y=1.12),
+      xaxis=dict(showgrid=False, zeroline=False),
+      yaxis=dict(showgrid=False, zeroline=False),
   )
   st.plotly_chart(fig3, use_container_width=True)
 
@@ -174,17 +182,24 @@ with g4:
       value_name="Monto",
   )
 
+  # 4. Colores personalizados y orden específico para el gráfico de abajo a la derecha
+  # Puedes modificar esta lista con los colores hexadecimales que prefieras en el orden exacto de tus grupos
+  colores_personalizados = ["#2E86C1", "#28B463", "#F39C12", "#8E44AD", "#E74C3C"]
+  
   fig4 = px.bar(
       df_pat_melt,
       x="Fecha",
       y="Monto",
       color="Nivel_2",
       barmode="relative",
-      color_discrete_sequence=px.colors.qualitative.Prism,
+      color_discrete_sequence=colores_personalizados, # Aplicamos la paleta personalizada
+      category_orders={"Nivel_2": ["Efectivo", "Inversiones", "Bienes Raíces", "Pasivos Corto Plazo", "Pasivos Largo Plazo"]} # Define aquí el orden estricto de las barras si lo deseas
   )
   fig4.update_layout(
       height=380,
       margin=dict(l=10, r=10, t=30, b=10),
       legend=dict(orientation="h", y=-0.2),
+      xaxis=dict(showgrid=False),
+      yaxis=dict(showgrid=True, gridcolor="#f0f0f0"),
   )
   st.plotly_chart(fig4, use_container_width=True)
