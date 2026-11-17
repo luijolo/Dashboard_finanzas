@@ -204,12 +204,12 @@ with g4:
       color_discrete_map=colores_por_categoria,  # Usamos el mapa directo por nombre
       category_orders={
           "Nivel_2": [
-              "Efectivo y equivalentes",
-              "Banco",
-              "Inversiones",
-              "Cuentas por cobrar",
               "Propiedades",
               "Otros activos",
+              "Cuentas por cobrar",
+              "Banco",
+              "Inversiones",
+              "Efectivo y equivalentes",
               "Tarjeta de crédito",
               "Préstamos",
               "Cuentas por pagar",
