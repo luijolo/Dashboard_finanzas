@@ -189,15 +189,15 @@
     },
     {
       "fecha": "2026-11-30",
-      "ingresos": 108827.59,
-      "gastos": 65812.6,
-      "resultado": 43014.99,
-      "tasa_ahorro": 39.53,
-      "activos": 1591931.2,
+      "ingresos": 110074.22,
+      "gastos": 65192.6,
+      "resultado": 44881.62,
+      "tasa_ahorro": 40.77,
+      "activos": 1591931.83,
       "pasivos": 249360.94,
-      "patrimonio_neto": 1342570.26,
+      "patrimonio_neto": 1342570.89,
       "fondo_emergencia": 182503.29,
-      "gasto_prom_12m": 76189.48583333334,
+      "gasto_prom_12m": 76137.81916666667,
       "fe_meses": 2.4
     }
   ],
@@ -506,7 +506,7 @@
       "2026-08-31": 21697.70728,
       "2026-09-30": 24670.25146,
       "2026-10-31": 24485.51294,
-      "2026-11-30": 24529.76026
+      "2026-11-30": 24530.39332
     },
     {
       "Nivel_2": "Inversiones",
@@ -724,7 +724,7 @@
       "2026-08-31": 122719.53728,
       "2026-09-30": 139948.28146,
       "2026-10-31": 522576.62294,
-      "2026-11-30": 457233.05026
+      "2026-11-30": 457233.68332
     },
     {
       "Nivel_1": "Activos",
@@ -841,7 +841,7 @@
     {
       "Nivel_3": "Medicamentos",
       "Presupuesto": 0.0,
-      "Gasto_Mes_Corriente": 0.0
+      "Gasto_Mes_Corriente": 880.0
     },
     {
       "Nivel_3": "Ropa",
@@ -851,7 +851,7 @@
     {
       "Nivel_3": "Salud",
       "Presupuesto": 7000.0,
-      "Gasto_Mes_Corriente": 3755.2200000000003
+      "Gasto_Mes_Corriente": 2255.2200000000003
     },
     {
       "Nivel_3": "Supermercado",
