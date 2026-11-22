@@ -190,14 +190,14 @@
     {
       "fecha": "2026-11-30",
       "ingresos": 110074.22,
-      "gastos": 65192.6,
-      "resultado": 44881.62,
-      "tasa_ahorro": 40.77,
+      "gastos": 64338.1,
+      "resultado": 45736.12,
+      "tasa_ahorro": 41.55,
       "activos": 1591931.83,
       "pasivos": 249360.94,
       "patrimonio_neto": 1342570.89,
       "fondo_emergencia": 182503.29,
-      "gasto_prom_12m": 76137.81916666667,
+      "gasto_prom_12m": 76066.61083333332,
       "fe_meses": 2.4
     }
   ],
@@ -861,7 +861,7 @@
     {
       "Nivel_3": "Comer",
       "Presupuesto": 17000.0,
-      "Gasto_Mes_Corriente": 20992.28
+      "Gasto_Mes_Corriente": 20262.78
     },
     {
       "Nivel_3": "Compras",
@@ -876,12 +876,12 @@
     {
       "Nivel_3": "Cine",
       "Presupuesto": 1550.0,
-      "Gasto_Mes_Corriente": 1550.0
+      "Gasto_Mes_Corriente": 0.0
     },
     {
       "Nivel_3": "Golf/deporte",
       "Presupuesto": 3900.0,
-      "Gasto_Mes_Corriente": 4090.0
+      "Gasto_Mes_Corriente": 2690.0
     },
     {
       "Nivel_3": "Youtube Premium",
@@ -916,7 +916,7 @@
     {
       "Nivel_3": "Otros",
       "Presupuesto": 8000.0,
-      "Gasto_Mes_Corriente": 5273.95
+      "Gasto_Mes_Corriente": 8098.95
     }
   ]
 }
