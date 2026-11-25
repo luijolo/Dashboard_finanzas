@@ -189,15 +189,15 @@
     },
     {
       "fecha": "2026-11-30",
-      "ingresos": 110710.78,
-      "gastos": 65998.79,
-      "resultado": 44711.99,
-      "tasa_ahorro": 40.39,
-      "activos": 1591939.1,
+      "ingresos": 111262.45,
+      "gastos": 65065.79,
+      "resultado": 46196.66,
+      "tasa_ahorro": 41.52,
+      "activos": 1591941.28,
       "pasivos": 249360.94,
-      "patrimonio_neto": 1342578.16,
+      "patrimonio_neto": 1342580.34,
       "fondo_emergencia": 182503.29,
-      "gasto_prom_12m": 76205.00166666666,
+      "gasto_prom_12m": 76127.25166666666,
       "fe_meses": 2.4
     }
   ],
@@ -506,7 +506,7 @@
       "2026-08-31": 21697.70728,
       "2026-09-30": 24670.25146,
       "2026-10-31": 24485.51294,
-      "2026-11-30": 24537.65738
+      "2026-11-30": 24539.8386
     },
     {
       "Nivel_2": "Inversiones",
@@ -724,7 +724,7 @@
       "2026-08-31": 122719.53728,
       "2026-09-30": 139948.28146,
       "2026-10-31": 522576.62294,
-      "2026-11-30": 457240.94737999997
+      "2026-11-30": 457243.1286
     },
     {
       "Nivel_1": "Activos",
@@ -821,7 +821,7 @@
     {
       "Nivel_3": "Combustible",
       "Presupuesto": 11500.0,
-      "Gasto_Mes_Corriente": 11350.6
+      "Gasto_Mes_Corriente": 10305.6
     },
     {
       "Nivel_3": "Mantenimiento",
@@ -841,7 +841,7 @@
     {
       "Nivel_3": "Medicamentos",
       "Presupuesto": 0.0,
-      "Gasto_Mes_Corriente": 880.0
+      "Gasto_Mes_Corriente": 792.0
     },
     {
       "Nivel_3": "Ropa",
@@ -866,7 +866,7 @@
     {
       "Nivel_3": "Compras",
       "Presupuesto": 6000.0,
-      "Gasto_Mes_Corriente": 5597.799999999999
+      "Gasto_Mes_Corriente": 5797.799999999999
     },
     {
       "Nivel_3": "Entretenimiento",
